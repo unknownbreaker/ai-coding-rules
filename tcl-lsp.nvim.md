@@ -66,5 +66,6 @@
 
 ## AI Instructions
 
-"Always use TypeScript" "Follow React best practices" "Prioritize readability
-over cleverness"
+Always use the tclsh as an engine to identify symbols
+
+Prioritize readability over cleverness

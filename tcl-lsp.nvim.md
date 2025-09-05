@@ -58,10 +58,88 @@ tcl-lsp.nvim/
 │   └── tcl-lsp.vim             # Vim plugin registration
 ├── doc/
 │   └── tcl-lsp.txt             # Documentation
-└── tests/
-    ├── lua/                    # Lua tests
-    ├── tcl/                    # Tcl tests
-    └── fixtures/               # Test files
+└── tests/                      # Comprehensive test suite
+    ├── lua/                    # Lua module tests
+    │   ├── test_init.lua       # Main plugin entry tests
+    │   ├── test_server.lua     # LSP server wrapper tests
+    │   ├── test_config.lua     # Configuration management tests
+    │   ├── parser/             # Parser module tests
+    │   │   ├── test_init.lua
+    │   │   ├── test_ast.lua    # AST building tests
+    │   │   ├── test_symbols.lua # Symbol extraction tests
+    │   │   └── test_scope.lua  # Scope analysis tests
+    │   ├── analyzer/           # Analyzer module tests
+    │   │   ├── test_init.lua
+    │   │   ├── test_workspace.lua # Workspace scanning tests
+    │   │   ├── test_references.lua # Reference finding tests
+    │   │   └── test_definitions.lua # Definition resolution tests
+    │   ├── features/           # LSP features tests
+    │   │   ├── test_completion.lua  # Code completion tests
+    │   │   ├── test_hover.lua       # Hover information tests
+    │   │   ├── test_signature.lua   # Signature help tests
+    │   │   ├── test_diagnostics.lua # Diagnostics tests
+    │   │   ├── test_formatting.lua  # Code formatting tests
+    │   │   ├── test_highlights.lua  # Document highlights tests
+    │   │   ├── test_symbols.lua     # Document/workspace symbols tests
+    │   │   ├── test_codelens.lua    # Code lens tests
+    │   │   └── test_folding.lua     # Folding ranges tests
+    │   ├── actions/            # Code actions tests
+    │   │   ├── test_init.lua
+    │   │   ├── test_rename.lua      # Symbol renaming tests
+    │   │   ├── test_cleanup.lua     # Remove unused items tests
+    │   │   └── test_refactor.lua    # Refactoring actions tests
+    │   └── utils/              # Utility tests
+    │       ├── test_cache.lua       # Caching system tests
+    │       ├── test_logger.lua      # Logging utilities tests
+    │       └── test_helpers.lua     # Common helpers tests
+    ├── tcl/                    # Tcl script tests
+    │   ├── core/               # Core functionality tests
+    │   │   ├── test_parser.tcl      # Main parsing engine tests
+    │   │   ├── test_ast_builder.tcl # AST construction tests
+    │   │   ├── test_symbol_finder.tcl # Symbol identification tests
+    │   │   ├── test_scope_analyzer.tcl # Scope resolution tests
+    │   │   └── test_workspace_scanner.tcl # Workspace indexing tests
+    │   ├── features/           # Feature tests
+    │   │   ├── test_completion.tcl  # Completion logic tests
+    │   │   ├── test_hover.tcl       # Hover info generation tests
+    │   │   ├── test_diagnostics.tcl # Error detection tests
+    │   │   ├── test_formatting.tcl  # Code formatting tests
+    │   │   └── test_references.tcl  # Reference finding tests
+    │   └── utils/              # Utility tests
+    │       ├── test_file_utils.tcl  # File operations tests
+    │       └── test_string_utils.tcl # String manipulation tests
+    ├── fixtures/               # Test data files
+    │   ├── sample_tcl/         # Sample Tcl files for testing
+    │   │   ├── simple_proc.tcl      # Basic procedure definitions
+    │   │   ├── namespaces.tcl       # Namespace examples
+    │   │   ├── packages.tcl         # Package usage examples
+    │   │   ├── variables.tcl        # Variable scope examples
+    │   │   ├── complex_project/     # Multi-file project structure
+    │   │   │   ├── main.tcl
+    │   │   │   ├── utils.tcl
+    │   │   │   └── config.tcl
+    │   │   └── syntax_errors.tcl    # Files with intentional errors
+    │   ├── sample_rvt/         # RVT template files for testing
+    │   │   ├── simple_template.rvt  # Basic RVT template
+    │   │   ├── complex_template.rvt # Complex mixed HTML/TCL
+    │   │   └── error_template.rvt   # Templates with errors
+    │   ├── expected_outputs/   # Expected test results
+    │   │   ├── ast_outputs/         # Expected AST structures
+    │   │   ├── symbol_outputs/      # Expected symbol tables
+    │   │   └── diagnostic_outputs/  # Expected diagnostic messages
+    │   └── lsp_messages/       # Sample LSP message exchanges
+    │       ├── completion_requests.json
+    │       ├── hover_requests.json
+    │       └── definition_requests.json
+    ├── integration/            # Integration tests
+    │   ├── test_lsp_server.lua     # Full LSP server integration
+    │   ├── test_neovim_integration.lua # Neovim plugin integration
+    │   ├── test_performance.lua    # Performance benchmarks
+    │   └── test_workflow.lua       # End-to-end workflow tests
+    ├── spec/                   # Test specifications
+    │   ├── busted_config.lua       # Busted test runner configuration
+    │   └── test_helpers.lua        # Common test utilities
+    └── README.md               # Testing documentation
 ```
 
 ## Development Phases

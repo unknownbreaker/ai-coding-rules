@@ -422,7 +422,7 @@ tcl-lsp.nvim/
 
 **Foundation Setup**
 
-- [ ] Basic Neovim plugin structure
+- [x] Basic Neovim plugin structure
 - [ ] LSP server initialization and lifecycle management
 - [ ] Tclsh process spawning and communication
 - [ ] Basic message handling (JSON-RPC)

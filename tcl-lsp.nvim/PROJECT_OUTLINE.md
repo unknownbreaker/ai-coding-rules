@@ -423,6 +423,13 @@ tcl-lsp.nvim/
 **Foundation Setup**
 
 - [x] Basic Neovim plugin structure
+  - [x] Configuration system
+    - Default configuration validation
+    - User config merging
+    - Buffer-local overrides
+    - Input validation
+    - Edge cases (circular references, large configs, special characters)
+    - Configuration utilities (reset, update, export/import)
 - [ ] LSP server initialization and lifecycle management
 - [ ] Tclsh process spawning and communication
 - [ ] Basic message handling (JSON-RPC)

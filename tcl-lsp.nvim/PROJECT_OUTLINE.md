@@ -102,38 +102,38 @@ tcl-lsp.nvim/
 │       └── custom_handlers.lua # Custom LSP handlers
 └── tests/                      # Comprehensive test suite
     ├── lua/                    # Lua module tests
-    │   ├── test_init.lua       # Main plugin entry tests
-    │   ├── test_server.lua     # LSP server wrapper tests
-    │   ├── test_config.lua     # Configuration management tests
+    │   ├── init_spec.lua       # Main plugin entry tests
+    │   ├── server_spec.lua     # LSP server wrapper tests
+    │   ├── config_spec.lua     # Configuration management tests
     │   ├── parser/             # Parser module tests
-    │   │   ├── test_init.lua
-    │   │   ├── test_ast.lua    # AST building tests
-    │   │   ├── test_symbols.lua # Symbol extraction tests
-    │   │   └── test_scope.lua  # Scope analysis tests
+    │   │   ├── init_spec.lua
+    │   │   ├── ast_spec.lua    # AST building tests
+    │   │   ├── symbols_spec.lua # Symbol extraction tests
+    │   │   └── scope_spec.lua  # Scope analysis tests
     │   ├── analyzer/           # Analyzer module tests
-    │   │   ├── test_init.lua
-    │   │   ├── test_workspace.lua # Workspace scanning tests
-    │   │   ├── test_references.lua # Reference finding tests
-    │   │   └── test_definitions.lua # Definition resolution tests
+    │   │   ├── init_spec.lua
+    │   │   ├── workspace_spec.lua # Workspace scanning tests
+    │   │   ├── references_spec.lua # Reference finding tests
+    │   │   └── definitions_spec.lua # Definition resolution tests
     │   ├── features/           # LSP features tests
-    │   │   ├── test_completion.lua  # Code completion tests
-    │   │   ├── test_hover.lua       # Hover information tests
-    │   │   ├── test_signature.lua   # Signature help tests
-    │   │   ├── test_diagnostics.lua # Diagnostics tests
-    │   │   ├── test_formatting.lua  # Code formatting tests
-    │   │   ├── test_highlights.lua  # Document highlights tests
-    │   │   ├── test_symbols.lua     # Document/workspace symbols tests
-    │   │   ├── test_codelens.lua    # Code lens tests
-    │   │   └── test_folding.lua     # Folding ranges tests
+    │   │   ├── completion_spec.lua  # Code completion tests
+    │   │   ├── hover_spec.lua       # Hover information tests
+    │   │   ├── signature_spec.lua   # Signature help tests
+    │   │   ├── diagnostics_spec.lua # Diagnostics tests
+    │   │   ├── formatting_spec.lua  # Code formatting tests
+    │   │   ├── highlights_spec.lua  # Document highlights tests
+    │   │   ├── symbols_spec.lua     # Document/workspace symbols tests
+    │   │   ├── codelens_spec.lua    # Code lens tests
+    │   │   └── folding_spec.lua     # Folding ranges tests
     │   ├── actions/            # Code actions tests
-    │   │   ├── test_init.lua
-    │   │   ├── test_rename.lua      # Symbol renaming tests
-    │   │   ├── test_cleanup.lua     # Remove unused items tests
-    │   │   └── test_refactor.lua    # Refactoring actions tests
+    │   │   ├── init_spec.lua
+    │   │   ├── rename_spec.lua      # Symbol renaming tests
+    │   │   ├── cleanup_spec.lua     # Remove unused items tests
+    │   │   └── refactor_spec.lua    # Refactoring actions tests
     │   └── utils/              # Utility tests
-    │       ├── test_cache.lua       # Caching system tests
-    │       ├── test_logger.lua      # Logging utilities tests
-    │       └── test_helpers.lua     # Common helpers tests
+    │       ├── cache_spec.lua       # Caching system tests
+    │       ├── logger_spec.lua      # Logging utilities tests
+    │       └── helpers_spec.lua     # Common helpers tests
     ├── tcl/                    # Tcl script tests
     │   ├── core/               # Core functionality tests
     │   │   ├── test_parser.tcl      # Main parsing engine tests
@@ -389,14 +389,14 @@ tcl-lsp.nvim/
     │       ├── codelens_requests.json
     │       └── folding_requests.json
     ├── integration/            # Integration tests
-    │   ├── test_lsp_server.lua     # Full LSP server integration
-    │   ├── test_neovim_integration.lua # Neovim plugin integration
-    │   ├── test_performance.lua    # Performance benchmarks
-    │   ├── test_workflow.lua       # End-to-end workflow tests
-    │   ├── test_multi_file.lua     # Multi-file project tests
-    │   ├── test_large_projects.lua # Large codebase tests
-    │   ├── test_rvt_integration.lua # RVT template integration
-    │   └── test_cross_platform.lua # Cross-platform compatibility
+    │   ├── lsp_server_spec.lua     # Full LSP server integration
+    │   ├── neovim_integration_spec.lua # Neovim plugin integration
+    │   ├── performance_spec.lua    # Performance benchmarks
+    │   ├── workflow_spec.lua       # End-to-end workflow tests
+    │   ├── multi_file_spec.lua     # Multi-file project tests
+    │   ├── large_projects_spec.lua # Large codebase tests
+    │   ├── rvt_integration_spec.lua # RVT template integration
+    │   └── cross_platform_spec.lua # Cross-platform compatibility
     ├── e2e/                    # End-to-end tests
     │   ├── jest.config.js          # Jest configuration
     │   ├── setup.js               # Test setup

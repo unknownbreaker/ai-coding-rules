@@ -605,9 +605,17 @@ capabilities = {
 
 1. **Write Documentation First** - Define function signature, parameters, return values
 2. **Write Tests** - Create comprehensive test cases including edge cases
-3. **Implement Function** - Write the actual implementation
-4. **Verify Coverage** - Ensure all tests pass and coverage requirements are met
-5. **Generate Docs** - Auto-generate API documentation from comments
+3. **Favor real modules over mocked libraries** - If some API or other module from the codebase is needed within a test, first try incorporating the real thing as opposed to a mock, in order to recreate the actual context in which that implementation being tested would function. If the API is completely external to the system, which risks unpredictable behavior from it, then recreate it as a mock. 
+4. **Implement Function** - Write the actual implementation
+5. **Verify Coverage** - Ensure all tests pass and coverage requirements are met
+6. **Fix Implementation First** - If a test fails, first determine if the implementation is the cause of failure. If you see tests that have contradictory expectations or expectations that are not reasonable to have of what the app should be able to do, then you may consider changing the test.
+7. **Generate Docs** - Auto-generate API documentation from comments
+
+**For Each File:**
+
+1. **Keep files reasonably sized** - Do not allow files to exceed 700 lines
+2. **Refactor when breaking up a big module** - Files nearing 700 lines should not only be refactored into separate smaller files, but other files that depended on that big module should be updated to point to the correct file with the respective APIs they need.
+3. **Refactor tests accordingly** - When breaking apart the files, their corresponding test files should be broken up to match the newly named respective files and implementations to test.
 
 **Example Development Cycle:**
 

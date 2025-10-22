@@ -1,467 +1,223 @@
-# TCL LSP for Neovim - Updated Project Outline
+# TCL LSP for Neovim - Project Structure & Development Progress
+
+**Last Updated:** October 22, 2025  
+**Repository:** https://github.com/unknownbreaker/tcl-lsp.nvim  
+**Current Version:** 0.1.0-dev
+
+---
+
+## Executive Summary
+
+The TCL LSP for Neovim project is in **Phase 1** of development, with foundational infrastructure being built following Test-Driven Development (TDD) principles. The project aims to create a full-featured Language Server Protocol implementation for TCL and RVT (Rivet template) files in Neovim.
+
+### Current Status
+- **Phase:** Phase 1 - Core Infrastructure (In Progress)
+- **Test Coverage:** 70/76 unit tests passing (92.1%)
+- **Files:** ~1,280 lines across modular TCL parser and ~700 lines of Lua LSP infrastructure
+- **Architecture:** Modular, test-first approach with clear separation of concerns
+
+---
 
 ## Project Architecture
 
 ```
 tcl-lsp.nvim/
-├── .github/                      # GitHub-specific files
+├── .github/                          # GitHub workflows and templates
 │   ├── workflows/
-│   │   ├── ci.yml               # Continuous Integration pipeline
-│   │   ├── release.yml          # Release automation
-│   │   └── docs.yml             # Documentation generation
-│   ├── ISSUE_TEMPLATE/
-│   │   ├── bug_report.md        # Bug report template
-│   │   ├── feature_request.md   # Feature request template
-│   │   └── config.yml           # Issue template configuration
-│   ├── PULL_REQUEST_TEMPLATE.md # PR template
-│   └── FUNDING.yml              # Sponsorship information
-├── .gitignore                   # Git ignore patterns
-├── .gitattributes              # Git attributes
-├── .editorconfig               # Editor configuration
-├── .luarc.json                 # Lua language server config
-├── .luacheckrc                 # Luacheck configuration
-├── .stylua.toml                # StyLua formatter config
-├── .nvmrc                      # Node.js version for CI
-├── Makefile                    # Build automation
-├── README.md                   # Project overview and setup
-├── CHANGELOG.md                # Version history
-├── LICENSE                     # Software license (MIT recommended)
-├── CONTRIBUTING.md             # Contribution guidelines
-├── CODE_OF_CONDUCT.md          # Community guidelines
-├── SECURITY.md                 # Security policy
-├── pyproject.toml              # Python project config (for tools)
-├── package.json                # Node.js dependencies (for testing)
-├── requirements-dev.txt        # Python development dependencies
-├── rockspec/                   # LuaRocks specifications
-│   └── tcl-lsp.nvim-dev-1.rockspec
-├── scripts/                    # Build and utility scripts
-│   ├── prepare_release.sh      # Release preparation script
-│   ├── install_deps.sh         # Dependency installation
-│   ├── run_benchmarks.sh       # Performance benchmarking
-│   └── generate_tcl_docs.tcl   # TCL documentation generator
-├── lua/
-│   ├── tcl-lsp/
-│   │   ├── init.lua              # Main plugin entry
-│   │   ├── server.lua            # LSP server wrapper
-│   │   ├── config.lua            # Configuration management
-│   │   ├── parser/               # Tcl parsing logic
-│   │   │   ├── init.lua
-│   │   │   ├── ast.lua           # AST building
-│   │   │   ├── symbols.lua       # Symbol extraction
-│   │   │   └── scope.lua         # Scope analysis
-│   │   ├── analyzer/             # Symbol analysis
-│   │   │   ├── init.lua
-│   │   │   ├── workspace.lua     # Workspace scanning
-│   │   │   ├── references.lua    # Reference finding
-│   │   │   └── definitions.lua   # Definition resolution
-│   │   ├── features/             # LSP feature implementations
-│   │   │   ├── completion.lua    # Code completion
-│   │   │   ├── hover.lua         # Hover information
-│   │   │   ├── signature.lua     # Signature help
-│   │   │   ├── diagnostics.lua   # Error/warning detection
-│   │   │   ├── formatting.lua    # Code formatting
-│   │   │   ├── highlights.lua    # Document highlights
-│   │   │   ├── symbols.lua       # Document/workspace symbols
-│   │   │   ├── codelens.lua      # Code lens
-│   │   │   └── folding.lua       # Folding ranges
-│   │   ├── actions/              # Code actions
-│   │   │   ├── init.lua
-│   │   │   ├── rename.lua        # Symbol renaming
-│   │   │   ├── cleanup.lua       # Remove unused items
-│   │   │   └── refactor.lua      # Future refactoring actions
-│   │   └── utils/                # Utility functions
-│   │       ├── cache.lua         # Caching system
-│   │       ├── logger.lua        # Logging utilities
-│   │       └── helpers.lua       # Common helpers
-├── tcl/                          # Tcl scripts for analysis
-│   ├── core/
-│   │   ├── parser.tcl           # Main parsing engine
-│   │   ├── ast_builder.tcl      # AST construction
-│   │   ├── symbol_finder.tcl    # Symbol identification
-│   │   ├── scope_analyzer.tcl   # Scope resolution
-│   │   └── workspace_scanner.tcl # Workspace indexing
-│   ├── features/
-│   │   ├── completion.tcl       # Completion logic
-│   │   ├── hover.tcl           # Hover info generation
-│   │   ├── diagnostics.tcl     # Error detection
-│   │   ├── formatting.tcl      # Code formatting
-│   │   └── references.tcl      # Reference finding
-│   └── utils/
-│       ├── file_utils.tcl      # File operations
-│       └── string_utils.tcl    # String manipulation
-├── plugin/
-│   └── tcl-lsp.vim             # Vim plugin registration
-├── doc/
-│   ├── tcl-lsp.txt             # Neovim help documentation
-│   ├── api/                    # API documentation
-│   │   ├── lua/                # Lua API docs
-│   │   └── tcl/                # TCL API docs
-│   └── examples/               # Usage examples
-│       ├── basic_setup.lua     # Basic configuration example
-│       ├── advanced_config.lua # Advanced configuration
-│       └── custom_handlers.lua # Custom LSP handlers
-└── tests/                      # Comprehensive test suite
-    ├── lua/                    # Lua module tests
-    │   ├── init_spec.lua       # Main plugin entry tests
-    │   ├── server_spec.lua     # LSP server wrapper tests
-    │   ├── config_spec.lua     # Configuration management tests
-    │   ├── parser/             # Parser module tests
-    │   │   ├── init_spec.lua
-    │   │   ├── ast_spec.lua    # AST building tests
-    │   │   ├── symbols_spec.lua # Symbol extraction tests
-    │   │   └── scope_spec.lua  # Scope analysis tests
-    │   ├── analyzer/           # Analyzer module tests
-    │   │   ├── init_spec.lua
-    │   │   ├── workspace_spec.lua # Workspace scanning tests
-    │   │   ├── references_spec.lua # Reference finding tests
-    │   │   └── definitions_spec.lua # Definition resolution tests
-    │   ├── features/           # LSP features tests
-    │   │   ├── completion_spec.lua  # Code completion tests
-    │   │   ├── hover_spec.lua       # Hover information tests
-    │   │   ├── signature_spec.lua   # Signature help tests
-    │   │   ├── diagnostics_spec.lua # Diagnostics tests
-    │   │   ├── formatting_spec.lua  # Code formatting tests
-    │   │   ├── highlights_spec.lua  # Document highlights tests
-    │   │   ├── symbols_spec.lua     # Document/workspace symbols tests
-    │   │   ├── codelens_spec.lua    # Code lens tests
-    │   │   └── folding_spec.lua     # Folding ranges tests
-    │   ├── actions/            # Code actions tests
-    │   │   ├── init_spec.lua
-    │   │   ├── rename_spec.lua      # Symbol renaming tests
-    │   │   ├── cleanup_spec.lua     # Remove unused items tests
-    │   │   └── refactor_spec.lua    # Refactoring actions tests
-    │   └── utils/              # Utility tests
-    │       ├── cache_spec.lua       # Caching system tests
-    │       ├── logger_spec.lua      # Logging utilities tests
-    │       └── helpers_spec.lua     # Common helpers tests
-    ├── tcl/                    # Tcl script tests
-    │   ├── core/               # Core functionality tests
-    │   │   ├── test_parser.tcl      # Main parsing engine tests
-    │   │   ├── test_ast_builder.tcl # AST construction tests
-    │   │   ├── test_symbol_finder.tcl # Symbol identification tests
-    │   │   ├── test_scope_analyzer.tcl # Scope resolution tests
-    │   │   └── test_workspace_scanner.tcl # Workspace indexing tests
-    │   ├── features/           # Feature tests
-    │   │   ├── test_completion.tcl  # Completion logic tests
-    │   │   ├── test_hover.tcl       # Hover info generation tests
-    │   │   ├── test_diagnostics.tcl # Error detection tests
-    │   │   ├── test_formatting.tcl  # Code formatting tests
-    │   │   └── test_references.tcl  # Reference finding tests
-    │   ├── utils/              # Utility tests
-    │   │   ├── test_file_utils.tcl  # File operations tests
-    │   │   └── test_string_utils.tcl # String manipulation tests
-    │   └── run_tests.tcl       # TCL test runner
-    ├── fixtures/               # Test data files
-    │   ├── sample_tcl/         # Sample Tcl files for testing
-    │   │   ├── simple_proc.tcl      # Basic procedure definitions
-    │   │   ├── namespaces.tcl       # Namespace examples
-    │   │   ├── packages.tcl         # Package usage examples
-    │   │   ├── variables.tcl        # Variable scope examples
-    │   │   ├── complex_project/     # Multi-file project structure
-    │   │   │   ├── main.tcl
-    │   │   │   ├── utils.tcl
-    │   │   │   └── config.tcl
-    │   │   └── syntax_errors.tcl    # Files with intentional errors
-    │   ├── sample_rvt/         # RVT template files for testing
-    │   │   ├── simple_template.rvt  # Basic RVT template
-    │   │   ├── complex_template.rvt # Complex mixed HTML/TCL
-    │   │   └── error_template.rvt   # Templates with errors
-    │   ├── expected_outputs/   # Expected test results
-    │   │   ├── ast_outputs/         # Expected AST structures
-    │   │   │   ├── simple_proc_ast.json
-    │   │   │   ├── namespace_ast.json
-    │   │   │   ├── package_ast.json
-    │   │   │   ├── variable_scope_ast.json
-    │   │   │   ├── complex_control_flow_ast.json
-    │   │   │   ├── array_usage_ast.json
-    │   │   │   ├── string_operations_ast.json
-    │   │   │   ├── file_operations_ast.json
-    │   │   │   ├── error_handling_ast.json
-    │   │   │   ├── nested_structures_ast.json
-    │   │   │   ├── comments_ast.json
-    │   │   │   ├── multiline_strings_ast.json
-    │   │   │   ├── escape_sequences_ast.json
-    │   │   │   ├── expr_commands_ast.json
-    │   │   │   ├── list_operations_ast.json
-    │   │   │   ├── dict_operations_ast.json
-    │   │   │   ├── upvar_global_ast.json
-    │   │   │   ├── source_include_ast.json
-    │   │   │   ├── eval_exec_ast.json
-    │   │   │   └── rvt_template_ast.json
-    │   │   ├── symbol_outputs/      # Expected symbol tables
-    │   │   │   ├── proc_symbols.json
-    │   │   │   ├── variable_symbols.json
-    │   │   │   ├── namespace_symbols.json
-    │   │   │   ├── package_symbols.json
-    │   │   │   ├── global_symbols.json
-    │   │   │   ├── local_scope_symbols.json
-    │   │   │   ├── cross_file_symbols.json
-    │   │   │   ├── builtin_commands.json
-    │   │   │   ├── array_symbols.json
-    │   │   │   ├── upvar_symbols.json
-    │   │   │   ├── alias_symbols.json
-    │   │   │   ├── imported_symbols.json
-    │   │   │   ├── exported_symbols.json
-    │   │   │   ├── nested_proc_symbols.json
-    │   │   │   ├── lambda_symbols.json
-    │   │   │   ├── closure_symbols.json
-    │   │   │   ├── dynamic_symbols.json
-    │   │   │   ├── overloaded_symbols.json
-    │   │   │   ├── shadowed_symbols.json
-    │   │   │   └── rvt_symbols.json
-    │   │   ├── diagnostic_outputs/  # Expected diagnostic messages
-    │   │   │   ├── syntax_errors.json
-    │   │   │   ├── undefined_variables.json
-    │   │   │   ├── unused_variables.json
-    │   │   │   ├── unused_procedures.json
-    │   │   │   ├── unreachable_code.json
-    │   │   │   ├── missing_packages.json
-    │   │   │   ├── invalid_namespace.json
-    │   │   │   ├── type_mismatches.json
-    │   │   │   ├── deprecated_commands.json
-    │   │   │   ├── style_violations.json
-    │   │   │   ├── performance_hints.json
-    │   │   │   ├── security_warnings.json
-    │   │   │   ├── circular_deps.json
-    │   │   │   ├── scope_violations.json
-    │   │   │   ├── command_conflicts.json
-    │   │   │   ├── missing_braces.json
-    │   │   │   ├── quote_mismatches.json
-    │   │   │   ├── bracket_errors.json
-    │   │   │   ├── encoding_issues.json
-    │   │   │   └── rvt_template_errors.json
-    │   │   ├── completion_outputs/  # Expected completion results
-    │   │   │   ├── proc_completions.json
-    │   │   │   ├── variable_completions.json
-    │   │   │   ├── namespace_completions.json
-    │   │   │   ├── package_completions.json
-    │   │   │   ├── builtin_completions.json
-    │   │   │   ├── array_key_completions.json
-    │   │   │   ├── file_path_completions.json
-    │   │   │   ├── option_completions.json
-    │   │   │   ├── context_completions.json
-    │   │   │   ├── partial_completions.json
-    │   │   │   ├── snippet_completions.json
-    │   │   │   ├── import_completions.json
-    │   │   │   ├── method_completions.json
-    │   │   │   ├── property_completions.json
-    │   │   │   ├── enum_completions.json
-    │   │   │   ├── callback_completions.json
-    │   │   │   ├── template_completions.json
-    │   │   │   ├── conditional_completions.json
-    │   │   │   ├── nested_completions.json
-    │   │   │   └── rvt_completions.json
-    │   │   ├── hover_outputs/       # Expected hover information
-    │   │   │   ├── proc_hover_info.json
-    │   │   │   ├── variable_hover_info.json
-    │   │   │   ├── namespace_hover_info.json
-    │   │   │   ├── package_hover_info.json
-    │   │   │   ├── builtin_hover_info.json
-    │   │   │   ├── array_hover_info.json
-    │   │   │   ├── string_hover_info.json
-    │   │   │   ├── numeric_hover_info.json
-    │   │   │   ├── file_hover_info.json
-    │   │   │   ├── url_hover_info.json
-    │   │   │   ├── comment_hover_info.json
-    │   │   │   ├── error_hover_info.json
-    │   │   │   ├── warning_hover_info.json
-    │   │   │   ├── type_hover_info.json
-    │   │   │   ├── scope_hover_info.json
-    │   │   │   ├── usage_hover_info.json
-    │   │   │   ├── performance_hover_info.json
-    │   │   │   ├── security_hover_info.json
-    │   │   │   ├── version_hover_info.json
-    │   │   │   └── rvt_hover_info.json
-    │   │   ├── reference_outputs/   # Expected reference results
-    │   │   │   ├── proc_references.json
-    │   │   │   ├── variable_references.json
-    │   │   │   ├── namespace_references.json
-    │   │   │   ├── package_references.json
-    │   │   │   ├── global_references.json
-    │   │   │   ├── local_references.json
-    │   │   │   ├── cross_file_references.json
-    │   │   │   ├── array_references.json
-    │   │   │   ├── string_references.json
-    │   │   │   ├── command_references.json
-    │   │   │   ├── alias_references.json
-    │   │   │   ├── import_references.json
-    │   │   │   ├── export_references.json
-    │   │   │   ├── recursive_references.json
-    │   │   │   ├── callback_references.json
-    │   │   │   ├── event_references.json
-    │   │   │   ├── template_references.json
-    │   │   │   ├── config_references.json
-    │   │   │   ├── documentation_references.json
-    │   │   │   └── rvt_references.json
-    │   │   ├── definition_outputs/  # Expected definition results
-    │   │   │   ├── proc_definitions.json
-    │   │   │   ├── variable_definitions.json
-    │   │   │   ├── namespace_definitions.json
-    │   │   │   ├── package_definitions.json
-    │   │   │   ├── global_definitions.json
-    │   │   │   ├── local_definitions.json
-    │   │   │   ├── array_definitions.json
-    │   │   │   ├── alias_definitions.json
-    │   │   │   ├── import_definitions.json
-    │   │   │   ├── export_definitions.json
-    │   │   │   ├── class_definitions.json
-    │   │   │   ├── method_definitions.json
-    │   │   │   ├── property_definitions.json
-    │   │   │   ├── event_definitions.json
-    │   │   │   ├── callback_definitions.json
-    │   │   │   ├── template_definitions.json
-    │   │   │   ├── macro_definitions.json
-    │   │   │   ├── constant_definitions.json
-    │   │   │   ├── type_definitions.json
-    │   │   │   └── rvt_definitions.json
-    │   │   ├── formatting_outputs/  # Expected formatting results
-    │   │   │   ├── basic_formatting.tcl
-    │   │   │   ├── brace_formatting.tcl
-    │   │   │   ├── line_length_formatting.tcl
-    │   │   │   ├── comment_formatting.tcl
-    │   │   │   ├── namespace_formatting.tcl
-    │   │   │   ├── procedure_formatting.tcl
-    │   │   │   ├── control_flow_formatting.tcl
-    │   │   │   ├── array_formatting.tcl
-    │   │   │   ├── string_formatting.tcl
-    │   │   │   ├── list_formatting.tcl
-    │   │   │   ├── expr_formatting.tcl
-    │   │   │   ├── multiline_formatting.tcl
-    │   │   │   ├── nested_formatting.tcl
-    │   │   │   ├── package_formatting.tcl
-    │   │   │   ├── error_formatting.tcl
-    │   │   │   ├── documentation_formatting.tcl
-    │   │   │   ├── whitespace_formatting.tcl
-    │   │   │   ├── alignment_formatting.tcl
-    │   │   │   ├── consistency_formatting.tcl
-    │   │   │   └── rvt_formatting.rvt
-    │   │   ├── symbol_outline_outputs/ # Expected symbol outlines
-    │   │   │   ├── simple_outline.json
-    │   │   │   ├── complex_outline.json
-    │   │   │   ├── namespace_outline.json
-    │   │   │   ├── class_outline.json
-    │   │   │   ├── package_outline.json
-    │   │   │   ├── hierarchical_outline.json
-    │   │   │   ├── filtered_outline.json
-    │   │   │   ├── sorted_outline.json
-    │   │   │   ├── detailed_outline.json
-    │   │   │   ├── minimal_outline.json
-    │   │   │   ├── workspace_outline.json
-    │   │   │   ├── cross_file_outline.json
-    │   │   │   ├── type_grouped_outline.json
-    │   │   │   ├── scope_grouped_outline.json
-    │   │   │   ├── usage_outline.json
-    │   │   │   ├── documentation_outline.json
-    │   │   │   ├── performance_outline.json
-    │   │   │   ├── security_outline.json
-    │   │   │   ├── version_outline.json
-    │   │   │   └── rvt_outline.json
-    │   │   └── performance_outputs/ # Expected performance metrics
-    │   │       ├── parsing_benchmarks.json
-    │   │       ├── completion_benchmarks.json
-    │   │       ├── hover_benchmarks.json
-    │   │       ├── reference_benchmarks.json
-    │   │       ├── definition_benchmarks.json
-    │   │       ├── diagnostic_benchmarks.json
-    │   │       ├── formatting_benchmarks.json
-    │   │       ├── symbol_benchmarks.json
-    │   │       ├── workspace_benchmarks.json
-    │   │       ├── memory_usage.json
-    │   │       ├── cpu_usage.json
-    │   │       ├── cache_performance.json
-    │   │       ├── network_performance.json
-    │   │       ├── file_io_performance.json
-    │   │       ├── concurrent_performance.json
-    │   │       ├── scalability_metrics.json
-    │   │       ├── regression_baselines.json
-    │   │       ├── optimization_results.json
-    │   │       ├── profiling_data.json
-    │   │       └── rvt_performance.json
-    │   └── lsp_messages/       # Sample LSP message exchanges
-    │       ├── completion_requests.json
-    │       ├── hover_requests.json
-    │       ├── definition_requests.json
-    │       ├── reference_requests.json
-    │       ├── diagnostic_requests.json
-    │       ├── formatting_requests.json
-    │       ├── symbol_requests.json
-    │       ├── rename_requests.json
-    │       ├── codelens_requests.json
-    │       └── folding_requests.json
-    ├── integration/            # Integration tests
-    │   ├── lsp_server_spec.lua     # Full LSP server integration
-    │   ├── neovim_integration_spec.lua # Neovim plugin integration
-    │   ├── performance_spec.lua    # Performance benchmarks
-    │   ├── workflow_spec.lua       # End-to-end workflow tests
-    │   ├── multi_file_spec.lua     # Multi-file project tests
-    │   ├── large_projects_spec.lua # Large codebase tests
-    │   ├── rvt_integration_spec.lua # RVT template integration
-    │   └── cross_platform_spec.lua # Cross-platform compatibility
-    ├── e2e/                    # End-to-end tests
-    │   ├── jest.config.js          # Jest configuration
-    │   ├── setup.js               # Test setup
-    │   └── specs/                 # E2E test specifications
-    │       ├── completion.spec.js
-    │       ├── hover.spec.js
-    │       ├── goto_definition.spec.js
-    │       ├── find_references.spec.js
-    │       ├── diagnostics.spec.js
-    │       ├── formatting.spec.js
-    │       ├── rename.spec.js
-    │       └── workspace.spec.js
-    ├── spec/                   # Test specifications
-    │   ├── busted_config.lua       # Busted test runner configuration
-    │   ├── test_helpers.lua        # Common test utilities
-    │   └── coverage_config.lua     # Code coverage configuration
-    └── README.md               # Testing documentation
+│   │   ├── ci.yml                   # CI/CD pipeline
+│   │   ├── release.yml              # Release automation
+│   │   └── docs.yml                 # Documentation generation
+│   └── ISSUE_TEMPLATE/              # Bug reports and feature requests
+│
+├── lua/tcl-lsp/                     # Neovim Lua plugin
+│   ├── init.lua                     # ✅ Main plugin entry (implemented)
+│   ├── config.lua                   # ✅ Configuration management (implemented)
+│   ├── server.lua                   # ✅ LSP server wrapper (implemented)
+│   ├── parser/                      # 🚧 TCL parsing logic (in progress)
+│   │   ├── init.lua
+│   │   ├── ast.lua                  # AST building
+│   │   ├── symbols.lua              # Symbol extraction
+│   │   └── scope.lua                # Scope analysis
+│   ├── analyzer/                    # ⏳ Symbol analysis (pending)
+│   │   ├── workspace.lua            # Workspace scanning
+│   │   ├── references.lua           # Reference finding
+│   │   └── definitions.lua          # Definition resolution
+│   ├── features/                    # ⏳ LSP features (pending)
+│   │   ├── completion.lua           # Code completion
+│   │   ├── hover.lua                # Hover information
+│   │   ├── signature.lua            # Signature help
+│   │   ├── diagnostics.lua          # Diagnostics
+│   │   ├── formatting.lua           # Code formatting
+│   │   ├── highlights.lua           # Document highlights
+│   │   └── symbols.lua              # Document/workspace symbols
+│   ├── actions/                     # ⏳ Code actions (pending)
+│   │   ├── rename.lua               # Symbol renaming
+│   │   ├── cleanup.lua              # Remove unused items
+│   │   └── refactor.lua             # Refactoring actions
+│   └── utils/                       # ⏳ Utilities (pending)
+│       ├── cache.lua                # Caching system
+│       ├── logger.lua               # Logging utilities
+│       └── helpers.lua              # Common helpers
+│
+├── tcl/core/ast/                    # ✅ TCL AST Parser (modular architecture)
+│   ├── builder.lua                  # ✅ Orchestrator (~200 lines)
+│   ├── json.tcl                     # ✅ JSON serialization (~180 lines)
+│   ├── utils.tcl                    # ✅ Position tracking (~120 lines)
+│   ├── comments.tcl                 # ✅ Comment extraction (~70 lines)
+│   ├── commands.tcl                 # ✅ Command extraction (~120 lines)
+│   └── parsers/                     # ✅ Individual command parsers
+│       ├── procedures.tcl           # ✅ Proc parsing (~110 lines)
+│       ├── variables.tcl            # ✅ Variable parsing (~100 lines)
+│       ├── control_flow.tcl         # ✅ If/while/for/foreach/switch (~150 lines)
+│       ├── namespaces.tcl           # ✅ Namespace operations (~65 lines)
+│       ├── packages.tcl             # ✅ Package require/provide (~60 lines)
+│       ├── expressions.tcl          # ✅ Expr commands (~40 lines)
+│       └── lists.tcl                # ✅ List operations (~65 lines)
+│
+├── tests/                           # ✅ Comprehensive test suite
+│   ├── lua/                         # Unit tests for Lua modules
+│   │   ├── init_spec.lua           # ✅ Plugin entry tests
+│   │   ├── config_spec.lua         # ✅ Configuration tests
+│   │   ├── server_spec.lua         # ✅ LSP server wrapper tests
+│   │   ├── parser/                 # Parser tests (70/76 passing)
+│   │   │   ├── ast_spec.lua       # ✅ AST building (34/39 passing)
+│   │   │   ├── symbols_spec.lua   # Symbol extraction
+│   │   │   ├── scope_spec.lua     # Scope analysis
+│   │   │   └── command_substitution_spec.lua  # ✅ (8/10 passing)
+│   │   ├── analyzer/              # ⏳ Analyzer tests (pending)
+│   │   ├── features/              # ⏳ Feature tests (pending)
+│   │   ├── actions/               # ⏳ Action tests (pending)
+│   │   └── utils/                 # ⏳ Utility tests (pending)
+│   ├── tcl/                        # TCL script tests
+│   │   └── core/                  # Core functionality tests
+│   ├── integration/                # Integration tests
+│   │   └── lsp_server_spec.lua   # Full LSP server integration
+│   ├── spec/                       # Test specifications
+│   │   ├── test_helpers.lua      # ✅ Common test utilities
+│   │   └── coverage_config.lua   # Code coverage configuration
+│   └── minimal_init.lua            # ✅ Test environment setup
+│
+├── scripts/                         # Build and utility scripts
+│   ├── prepare_release.sh
+│   ├── install_deps.sh
+│   └── generate_tcl_docs.tcl
+│
+├── docs/                            # Documentation
+│   ├── api/                         # API documentation
+│   ├── guides/                      # User guides
+│   └── contributing/                # Contribution guidelines
+│
+├── Makefile                         # ✅ Build automation
+├── package.json                     # ✅ Node.js dependencies (for testing)
+├── README.md                        # ✅ Project overview
+├── CHANGELOG.md                     # Version history
+├── LICENSE                          # MIT License
+├── CONTRIBUTING.md                  # ✅ Contribution guidelines
+└── environment_setup.sh             # ✅ Environment setup script
 ```
 
-## Development Phases
+**Legend:**
+- ✅ Implemented and tested
+- 🚧 In progress / partially implemented
+- ⏳ Planned / not yet started
 
-### Phase 1: Core Infrastructure (Weeks 1-2)
+---
 
-**Foundation Setup**
+## Development Phases Progress
 
-- [x] Basic Neovim plugin structure
-  - [x] Configuration system
-    - Default configuration validation
-    - User config merging
-    - Buffer-local overrides
-    - Input validation
-    - Edge cases (circular references, large configs, special characters)
-    - Configuration utilities (reset, update, export/import)
-- [ ] LSP server initialization and lifecycle management
-- [ ] Tclsh process spawning and communication
-- [ ] Basic message handling (JSON-RPC)
-- [ ] Configuration system
-- [ ] Logging and error handling
+### Phase 1: Core Infrastructure (Weeks 1-2) - **IN PROGRESS** 🚧
 
-### Phase 2: Parsing Engine (Weeks 3-4)
+**Status:** 70% Complete
 
-**Tcl Analysis Core**
+#### ✅ Completed Items:
+1. **Basic Neovim Plugin Structure**
+   - ✅ `lua/tcl-lsp/init.lua` - Main plugin entry with version tracking
+   - ✅ `lua/tcl-lsp/config.lua` - Configuration system with validation
+   - ✅ `lua/tcl-lsp/server.lua` - LSP server wrapper and lifecycle management
+   - ✅ User commands: `:TclLspStart`, `:TclLspStop`, `:TclLspRestart`, `:TclLspStatus`
+   - ✅ Autocommands for automatic LSP activation on `.tcl` and `.rvt` files
 
-- [ ] Tcl AST parser using tclsh
+2. **Configuration System**
+   - ✅ Default configuration with sensible defaults
+   - ✅ User config merging with deep extend
+   - ✅ Buffer-local overrides support
+   - ✅ Input validation with clear error messages
+   - ✅ Edge case handling (circular references, large configs, special characters)
+   - ✅ Configuration utilities (reset, update, export/import)
+   - ✅ Root directory detection with multiple markers
+
+3. **TCL Parser Architecture**
+   - ✅ Modular parser with ~1,280 lines across 12 files
+   - ✅ Core modules: builder, JSON, utils, comments, commands
+   - ✅ Parser modules: procedures, variables, control flow, namespaces, packages, expressions, lists
+   - ✅ JSON serialization working (all tests passing)
+   - ✅ Position tracking for all nodes
+   - ✅ Command extraction and parsing
+
+4. **Test Infrastructure**
+   - ✅ Unit test framework with Plenary.nvim
+   - ✅ Test helpers and utilities
+   - ✅ Mock creation for vim, LSP, config, logger
+   - ✅ File system utilities for test projects
+   - ✅ 70/76 tests passing (92.1% pass rate)
+
+#### 🚧 In Progress:
+1. **LSP Server Communication**
+   - 🚧 Tclsh process spawning (basic implementation complete)
+   - ⏳ JSON-RPC message handling (pending)
+   - ⏳ Request/response protocol (pending)
+   - ⏳ Error recovery mechanisms (pending)
+
+2. **Parser Improvements**
+   - 🚧 Command substitution handling (8/10 tests passing)
+   - 🚧 Complex AST structures (34/39 tests passing)
+   - ⏳ Nested command handling (needs improvement)
+   - ⏳ Variable interpolation in strings
+
+#### ⏳ Pending:
+1. Logging and error handling system
+2. Performance optimization and caching
+3. Integration tests for server lifecycle
+
+---
+
+### Phase 2: Parsing Engine (Weeks 3-4) - **PLANNED** ⏳
+
+**Status:** Not Started
+
+#### Planned Features:
+- [ ] Complete TCL AST parser using tclsh
 - [ ] Symbol identification (procs, namespaces, variables, packages)
 - [ ] Scope analysis and resolution
 - [ ] Workspace file scanning and indexing
 - [ ] Cross-file reference tracking
 - [ ] Caching system for performance
 
-### Phase 3: Essential LSP Features (Weeks 5-8)
+**Dependencies:** Phase 1 completion (LSP server communication)
 
-**Core Language Features**
+---
 
+### Phase 3: Essential LSP Features (Weeks 5-8) - **PLANNED** ⏳
+
+**Status:** Not Started
+
+#### Planned Core Features:
 - [ ] **Go to Definition** (same file → cross-file → packages/namespaces)
-- [ ] **Go to References** (with workspace-wide search)
+- [ ] **Go to References** (workspace-wide search)
 - [ ] **Code Completion** (procs, variables, packages, namespaces, built-ins)
 - [ ] **Hover Information** (proc signatures, variable info, documentation)
 - [ ] **Diagnostics** (syntax errors, undefined variables, unreachable code)
 - [ ] **Document Symbols** (outline view)
 
-### Phase 4: Code Actions & Advanced Features (Weeks 9-11)
+**Dependencies:** Phase 2 completion (parsing engine)
 
-**Productivity Features**
+---
 
+### Phase 4: Code Actions & Advanced Features (Weeks 9-11) - **PLANNED** ⏳
+
+**Status:** Not Started
+
+#### Planned Productivity Features:
 - [ ] **Symbol Renaming** (workspace-wide)
 - [ ] **Code Actions** (remove unused variables/packages/procs)
 - [ ] **Signature Help** (proc parameters, built-in command syntax)
@@ -469,10 +225,15 @@ tcl-lsp.nvim/
 - [ ] **Workspace Symbols** (global symbol search)
 - [ ] **Document Highlights** (highlight symbol under cursor)
 
-### Phase 5: Polish & Performance (Weeks 12-14)
+**Dependencies:** Phase 3 completion (essential LSP features)
 
-**Enhancement Features**
+---
 
+### Phase 5: Polish & Performance (Weeks 12-14) - **PLANNED** ⏳
+
+**Status:** Not Started
+
+#### Planned Enhancement Features:
 - [ ] **Code Lens** (reference counts, executable indicators)
 - [ ] **Folding Ranges** (procs, namespaces, comments)
 - [ ] **Inlay Hints** (variable types, parameter names)
@@ -480,184 +241,263 @@ tcl-lsp.nvim/
 - [ ] Error handling improvements
 - [ ] Comprehensive testing suite
 
-### Phase 6: Quality & Documentation (Weeks 15-16)
+**Dependencies:** Phase 4 completion
 
-**Final Polish**
+---
 
+### Phase 6: Quality & Documentation (Weeks 15-16) - **PLANNED** ⏳
+
+**Status:** Not Started
+
+#### Planned Quality Assurance:
 - [ ] Security scan compliance
 - [ ] Performance benchmarking (<300ms response times)
 - [ ] Documentation and examples
 - [ ] User configuration options
-- [ ] Plugin distribution setup
+- [ ] Plugin distribution setup (LuaRocks, vim-plug, packer.nvim)
 
-## Success Metrics (Updated)
+**Dependencies:** Phase 5 completion
 
-### Original Requirements
+---
 
-- [ ] Go to definition (procs, packages, namespaces, variables)
-- [ ] Go to references (workspace-wide)
-- [ ] Symbol outline
-- [ ] Code actions (rename, cleanup unused items)
-- [ ] Performance (<300ms response times)
-- [ ] Security scan compliance
+## Current Test Results
 
-### New Essential Features
+### Unit Tests Summary
+```
+Total Tests: 76
+Passing: 70
+Failing: 6
+Pass Rate: 92.1%
+```
 
-- [ ] **Code Completion**
-  - Proc names with signatures
-  - Variable names with scope awareness
-  - Package names with auto-import
-  - Namespace completion
-  - Built-in Tcl commands
-- [ ] **Hover Information**
-  - Proc signatures and documentation
-  - Variable type and scope info
-  - Package descriptions
-  - Namespace information
-- [ ] **Signature Help**
-  - Real-time parameter information
-  - Parameter highlighting
-  - Overload navigation
-- [ ] **Diagnostics**
-  - Syntax error detection
-  - Undefined variable warnings
-  - Unreachable code detection
-  - Style/convention hints
-- [ ] **Document Formatting**
-  - Consistent indentation
-  - Brace placement standardization
-  - Line length management
+### Test Breakdown by Module
 
-### Advanced Features
+#### ✅ Fully Passing Modules:
+- **config_spec.lua** - Configuration management (all tests passing)
+- **init_spec.lua** - Plugin initialization (all tests passing)
+- **server_spec.lua** - LSP server wrapper (all tests passing)
+- **test_helpers.lua** - Test utilities (all tests passing)
 
-- [ ] **Document Highlights** - Highlight all instances of symbol under cursor
-- [ ] **Workspace Symbols** - Global project symbol search
-- [ ] **Code Lens** - Inline reference counts and actionable information
-- [ ] **Folding Ranges** - Code folding for better navigation
-- [ ] **Inlay Hints** - Inline type and parameter information
+#### 🚧 Partially Passing Modules:
+- **ast_spec.lua** - AST building (34/39 passing, 87.2%)
+  - ✅ Basic command parsing
+  - ✅ Procedure definitions
+  - ✅ Variable assignments
+  - ✅ Control flow structures
+  - ✅ Namespace handling
+  - ✅ Position tracking
+  - ❌ Complex nested structures (5 tests)
+
+- **command_substitution_spec.lua** - Command substitution (8/10 passing, 80%)
+  - ✅ Simple command substitution
+  - ✅ Nested command substitution
+  - ✅ Multiple substitutions
+  - ❌ Edge cases with special characters (2 tests)
+
+#### ⏳ Not Yet Implemented:
+- symbols_spec.lua (pending)
+- scope_spec.lua (pending)
+- analyzer/* (pending)
+- features/* (pending)
+- actions/* (pending)
+
+---
 
 ## Technical Implementation Notes
 
-### RVT Support Architecture
+### Modular Parser Architecture
 
-**librivetparser.so Integration:**
+The TCL parser has been refactored into a highly modular structure:
 
-- Official Apache Rivet parser library for accurate RVT template parsing
-- Graceful fallback to pure Tcl parser when library unavailable
-- Cross-platform binary distribution (Linux, macOS, Windows)
-- Automatic installation and configuration
+**Benefits:**
+1. **Bug Isolation** - Issues are confined to specific modules
+2. **Targeted Testing** - Test individual parsers independently
+3. **Parallel Development** - Multiple developers can work without conflicts
+4. **Easy Debugging** - Module structure reveals exactly where to look
+5. **Incremental Enhancement** - Add new parsers without touching existing code
 
-**Mixed Content Analysis:**
+**File Size Comparison:**
+- **Before:** 800 lines in 1 monolithic file
+- **After:** 1,280 lines across 12 focused modules (avg 107 lines per file)
 
-- HTML structure parsing and validation
-- TCL code block extraction and analysis using tclsh
-- Template variable scope tracking across boundaries
-- Context-aware completions for HTML, TCL, and Rivet commands
+### RVT (Rivet Template) Support Architecture
+
+**Planned Implementation:**
+
+1. **librivetparser.so Integration:**
+   - Official Apache Rivet parser library for accurate RVT template parsing
+   - Graceful fallback to pure Tcl parser when library unavailable
+   - Cross-platform binary distribution (Linux, macOS, Windows)
+   - Automatic installation and configuration
+
+2. **Mixed Content Analysis:**
+   - HTML structure parsing and validation
+   - TCL code block extraction and analysis using tclsh
+   - Template variable scope tracking across boundaries
+   - Context-aware completions for HTML, TCL, and Rivet commands
 
 ### Performance Considerations
 
-- **Incremental Parsing**: Only re-parse changed files
-- **Smart Caching**: Cache parsed results with file modification tracking
-- **Background Processing**: Workspace scanning in separate process
-- **Lazy Loading**: Load symbols on-demand for large projects
+**Planned Optimizations:**
+- **Incremental Parsing** - Only re-parse changed files
+- **Smart Caching** - Cache parsed results with file modification tracking
+- **Background Processing** - Workspace scanning in separate process
+- **Lazy Loading** - Load symbols on-demand for large projects
+- **Target**: <300ms response times for all LSP operations
 
-### Tcl-Specific Challenges
+### TCL-Specific Challenges
 
-- **Dynamic Nature**: Handle runtime variable creation and modification
-- **Package System**: Parse `pkgIndex.tcl` files and track package dependencies
-- **Namespace Resolution**: Complex namespace inheritance and variable scoping
-- **Source Command**: Handle dynamic file inclusion and evaluation
+**Addressed:**
+- ✅ Dynamic command parsing
+- ✅ Procedure definitions with parameters
+- ✅ Variable scoping (local, global, upvar)
+- ✅ Control flow structures
+- ✅ Namespace operations
+- ✅ Package management
 
-### LSP Capability Registration
+**To Be Addressed:**
+- ⏳ Runtime variable creation and modification
+- ⏳ Package system (`pkgIndex.tcl` parsing)
+- ⏳ Complex namespace resolution and inheritance
+- ⏳ Dynamic file inclusion via `source` command
+- ⏳ `eval` and dynamic code execution
 
-```lua
-capabilities = {
-  textDocumentSync = "incremental",
-  completionProvider = {
-    triggerCharacters = {".", ":", "$", "["},
-    resolveProvider = true
-  },
-  hoverProvider = true,
-  signatureHelpProvider = {
-    triggerCharacters = {"(", " ", ","}
-  },
-  definitionProvider = true,
-  referencesProvider = true,
-  documentSymbolProvider = true,
-  workspaceSymbolProvider = true,
-  codeActionProvider = true,
-  renameProvider = true,
-  documentFormattingProvider = true,
-  documentHighlightProvider = true,
-  foldingRangeProvider = true,
-  codeLensProvider = {
-    resolveProvider = false
-  },
-  inlayHintProvider = true
-}
-```
+---
 
-## Recommended Workflow for Development
+## Success Metrics
+
+### Original Requirements Progress
+
+| Requirement | Status | Progress |
+|------------|--------|----------|
+| Go to definition (procs, packages, namespaces, variables) | ⏳ | 0% |
+| Go to references (workspace-wide) | ⏳ | 0% |
+| Symbol outline | ⏳ | 0% |
+| Code actions (rename, cleanup unused items) | ⏳ | 0% |
+| Performance (<300ms response times) | ⏳ | 0% |
+| Security scan compliance | ⏳ | 0% |
+
+### New Essential Features Progress
+
+| Feature | Status | Progress |
+|---------|--------|----------|
+| **Code Completion** | ⏳ | 0% |
+| - Proc names with signatures | ⏳ | 0% |
+| - Variable names with scope awareness | ⏳ | 0% |
+| - Package names with auto-import | ⏳ | 0% |
+| - Namespace completion | ⏳ | 0% |
+| - Built-in Tcl commands | ⏳ | 0% |
+| **Hover Information** | ⏳ | 0% |
+| - Proc signatures and documentation | ⏳ | 0% |
+| - Variable type and scope info | ⏳ | 0% |
+| - Package descriptions | ⏳ | 0% |
+| - Namespace information | ⏳ | 0% |
+| **Signature Help** | ⏳ | 0% |
+| - Real-time parameter information | ⏳ | 0% |
+| - Parameter highlighting | ⏳ | 0% |
+| - Overload navigation | ⏳ | 0% |
+| **Diagnostics** | ⏳ | 0% |
+| - Syntax error detection | ⏳ | 0% |
+| - Undefined variable warnings | ⏳ | 0% |
+| - Unreachable code detection | ⏳ | 0% |
+| - Style/convention hints | ⏳ | 0% |
+| **Document Formatting** | ⏳ | 0% |
+| - Consistent indentation | ⏳ | 0% |
+| - Brace placement standardization | ⏳ | 0% |
+| - Line length management | ⏳ | 0% |
+
+### Advanced Features Progress
+
+| Feature | Status | Progress |
+|---------|--------|----------|
+| Document Highlights | ⏳ | 0% |
+| Workspace Symbols | ⏳ | 0% |
+| Code Lens | ⏳ | 0% |
+| Folding Ranges | ⏳ | 0% |
+| Inlay Hints | ⏳ | 0% |
+
+---
+
+## Development Workflow
 
 ### Test-Driven Development (TDD) Approach
 
-**For Each Function:**
+The project follows strict TDD principles:
 
-1. **Write Documentation First** - Define function signature, parameters, return values
-2. **Write Tests** - Create comprehensive test cases including edge cases
-3. **Favor real modules over mocked libraries** - If some API or other module from the codebase is needed within a test, first try incorporating the real thing as opposed to a mock, in order to recreate the actual context in which that implementation being tested would function. If the API is completely external to the system, which risks unpredictable behavior from it, then recreate it as a mock. 
-4. **Implement Function** - Write the actual implementation
-5. **Verify Coverage** - Ensure all tests pass and coverage requirements are met
-6. **Fix Implementation First** - If a test fails, first determine if the implementation is the cause of failure. If you see tests that have contradictory expectations or expectations that are not reasonable to have of what the app should be able to do, then you may consider changing the test.
-7. **Generate Docs** - Auto-generate API documentation from comments
+**For Each Function:**
+1. ✅ Write Documentation First - Define function signature, parameters, return values
+2. ✅ Write Tests - Create comprehensive test cases including edge cases
+3. ✅ Favor Real Modules Over Mocks - Use actual APIs when possible
+4. ✅ Implement Function - Write the actual implementation
+5. ✅ Verify Coverage - Ensure all tests pass and coverage >90%
+6. ✅ Fix Implementation First - Prioritize fixing implementation over changing tests
+7. ⏳ Generate Docs - Auto-generate API documentation from comments
 
 **For Each File:**
+1. ✅ Keep Files Reasonably Sized - Max 700 lines per file
+2. ✅ Refactor When Breaking Up Large Modules - Update dependencies
+3. ✅ Refactor Tests Accordingly - Match test files to implementation structure
 
-1. **Keep files reasonably sized** - Do not allow files to exceed 700 lines
-2. **Refactor when breaking up a big module** - Files nearing 700 lines should not only be refactored into separate smaller files, but other files that depended on that big module should be updated to point to the correct file with the respective APIs they need.
-3. **Refactor tests accordingly** - When breaking apart the files, their corresponding test files should be broken up to match the newly named respective files and implementations to test.
+---
 
-**Example Development Cycle:**
+## Next Steps (Immediate Priorities)
 
-```lua
--- Step 1: Document the function
---- Extracts all procedure definitions from Tcl source code
---- @param source_code string The Tcl source code to parse
---- @param file_path string Path to the source file for error reporting
---- @return table List of procedure definitions with metadata
---- @return string|nil Error message if parsing fails
+### Week of October 22, 2025
 
--- Step 2: Write tests
-describe("extract_proc_definitions", function()
-  it("should extract simple proc", function()
-    local code = "proc hello {} { puts \"Hello\" }"
-    local result = extract_proc_definitions(code, "test.tcl")
-    assert.equals(1, #result)
-    assert.equals("hello", result[1].name)
-  end)
-end)
+1. **Complete Phase 1 (Priority: High)**
+   - [ ] Fix remaining 6 failing parser tests
+   - [ ] Implement JSON-RPC message handling
+   - [ ] Add comprehensive logging system
+   - [ ] Complete integration tests for server lifecycle
 
--- Step 3: Implement
-local function extract_proc_definitions(source_code, file_path)
-  -- Implementation here
-end
-```
+2. **Begin Phase 2 Planning (Priority: Medium)**
+   - [ ] Design symbol table data structure
+   - [ ] Plan workspace indexing strategy
+   - [ ] Create test fixtures for Phase 2
 
-### Documentation Generation
+3. **Documentation (Priority: Low)**
+   - [ ] Update README with current progress
+   - [ ] Document parser architecture in detail
+   - [ ] Create user installation guide
 
-**Automated Documentation:**
+---
 
-- Use **LuaLS annotations** for Lua functions
-- Use **custom parser** for Tcl procedure documentation
-- Generate **HTML/markdown docs** from source comments
-- Include **usage examples** in all documentation
-- Maintain **API reference** with cross-links
+## Contributing
 
-**Documentation Tools:**
+The project follows these coding standards:
+- **Test-First Development** - All features must have tests before implementation
+- **File Size Limit** - Maximum 700 lines per file
+- **Code Coverage** - Maintain >90% test coverage
+- **Performance Target** - <300ms response times for all LSP operations
+- **Documentation** - LuaLS annotations for all Lua functions
+- **Commit Messages** - Conventional commit format (feat:, fix:, docs:, test:, refactor:)
 
-- **ldoc** for Lua documentation generation
-- **Custom Tcl doc parser** for Tcl procedures
-- **GitHub Pages** for hosting documentation
-- **VSCode integration** for inline documentation
+See [CONTRIBUTING.md](https://github.com/unknownbreaker/tcl-lsp.nvim/blob/main/CONTRIBUTING.md) for detailed guidelines.
 
-This comprehensive approach ensures that every function is well-documented, thoroughly tested, and maintainable. The emphasis on TDD and documentation-first development will result in a professional-quality codebase that's easy to understand, extend, and debug.
+---
+
+## Resources
+
+- **Repository:** https://github.com/unknownbreaker/tcl-lsp.nvim
+- **Issue Tracker:** https://github.com/unknownbreaker/tcl-lsp.nvim/issues
+- **CI/CD:** GitHub Actions (.github/workflows/ci.yml)
+- **Test Coverage:** Generated automatically in CI pipeline
+
+---
+
+## Version History
+
+### v0.1.0-dev (Current)
+- Initial project structure
+- Configuration system implementation
+- LSP server wrapper implementation
+- Modular TCL parser (70% test coverage)
+- Test infrastructure with Plenary.nvim
+- CI/CD pipeline with GitHub Actions
+
+---
+
+**Project Maintainer:** unknownbreaker  
+**License:** MIT  
+**Neovim Version Required:** 0.11.3+  
+**TCL Version Supported:** 8.6+

@@ -31,15 +31,11 @@ Scheduling: tests/lua/analyzer/references_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/symbols_spec.lua
-Real Neovim test environment initialized
-
-========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/folding_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/formatting_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/diagnostics_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -47,11 +43,19 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/init_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/highlights_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/logger_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/formatting_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/cache_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/rename_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -94,27 +98,15 @@ Errors :        0
 Real Neovim test environment initialized
 
 ========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/signature_spec.lua
+Real Neovim test environment initialized
+
+========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/codelens_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/highlights_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/scope_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/helpers_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/hover_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/diagnostics_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/cleanup_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -122,27 +114,15 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/init_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/logger_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/signature_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/hover_spec.lua
 Real Neovim test environment initialized
 
 ========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/init_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/definitions_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/cache_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/cleanup_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -154,11 +134,31 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/
 Real Neovim test environment initialized
 
 ========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/symbols_spec.lua
+Real Neovim test environment initialized
+
+========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/refactor_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/rename_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/definitions_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/helpers_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/scope_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -191,7 +191,7 @@ Success ||      TCL AST Parser Procedure (proc) Parsing should parse procedure w
 Fail    ||      TCL AST Parser Procedure (proc) Parsing should parse procedure with args (variable arguments)
             ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:142: Expected objects to be the same.
             Passed in:
-            (table: 0x0107c80e00) {
+            (table: 0x01093e9d78) {
               [1] = 1 }
             Expected:
             (boolean) true
@@ -540,80 +540,44 @@ Group 2: Line Mapping
 
 Group 3: Offset to Line Conversion
 -----------------------------------------
-✗ FAIL: Offset at start of line 1
-  Expected: 1 1
-  Got: line 1 column 1
-✗ FAIL: Offset in middle of line 1
-  Expected: 1 3
-  Got: line 1 column 3
-✗ FAIL: Offset at start of line 2
-  Expected: 2 1
-  Got: line 2 column 1
-✗ FAIL: Offset in middle of line 2
-  Expected: 2 3
-  Got: line 2 column 3
-✗ FAIL: Offset at start of line 3
-  Expected: 3 1
-  Got: line 3 column 1
+✓ PASS: Offset at start of line 1
+✓ PASS: Offset in middle of line 1
+✓ PASS: Offset at start of line 2
+✓ PASS: Offset in middle of line 2
+✓ PASS: Offset at start of line 3
 ✗ FAIL: Offset beyond end (should default)
   Expected: 1 1
-  Got: line 1 column 101
+  Got: 1 101
 
 Group 4: Line Counting
 -----------------------------------------
-✗ FAIL: Count lines - single line
-  Expected: 0
-  Got: 1
-✗ FAIL: Count lines - two lines
-  Expected: 1
-  Got: 2
-✗ FAIL: Count lines - three lines
-  Expected: 2
-  Got: 3
-✗ FAIL: Count lines - empty string
-  Expected: 0
-  Got: 1
-✗ FAIL: Count lines - only newline
-  Expected: 1
-  Got: 2
-✗ FAIL: Count lines - multiple newlines
-  Expected: 3
-  Got: 4
+✓ PASS: Count lines - single line
+✓ PASS: Count lines - two lines
+✓ PASS: Count lines - three lines
+✓ PASS: Count lines - empty string
+✓ PASS: Count lines - only newline
+✓ PASS: Count lines - multiple newlines
 
 Group 5: Complex Scenarios
 -----------------------------------------
-✗ FAIL: TCL code with proc
-  Expected: 2
-  Got: 3
-✗ FAIL: Offset in multiline code
-  Expected: 2 1
-  Got: line 2 column 1
-✗ FAIL: Offset with tabs
-  Expected: 1
-  Got: 2
-✗ FAIL: Long file simulation
-  Expected: 100
-  Got: 101
+✓ PASS: TCL code with proc
+✓ PASS: Offset in multiline code
+✓ PASS: Offset with tabs
+✓ PASS: Long file simulation
 
 Group 6: Edge Cases
 -----------------------------------------
-✗ FAIL: Unicode characters in code
-  Expected: 1
-  Got: 2
-✗ FAIL: Windows line endings (CRLF)
-  Expected: 2
-  Got: 3
-✗ FAIL: Mixed line endings
-  Expected: 2
-  Got: 3
+✓ PASS: Unicode characters in code
+✓ PASS: Windows line endings (CRLF)
+✓ PASS: Mixed line endings
 ✓ PASS: Range with same start and end
 
 =========================================
 Test Results
 =========================================
 Total:  29
-Passed: 10
-Failed: 19
+Passed: 28
+Failed: 1
 
 ✗ SOME TESTS FAILED
 child process exited abnormally
@@ -624,16 +588,17 @@ Comment Extraction Tests
 ========================
 
 ✓ PASS: No comments
-invalid command name "::ast::utils::make_range"
-    while executing
-"::ast::utils::make_range $line_num 1 $line_num [string length $line]"
-    (procedure "::ast::comments::extract" line 14)
-    invoked from within
-"::ast::comments::extract $code"
-    (procedure "test" line 5)
-    invoked from within
-"test "Single comment" "# This is a comment" 1"
-    (file "/Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/tcl/core/ast/test_comments.tcl" line 31)
+✓ PASS: Single comment
+✓ PASS: Multiple comments
+✓ PASS: Indented comment
+✓ PASS: Comment with special chars
+✓ PASS: Empty file
+✓ PASS: Only whitespace
+✓ PASS: Comment at end
+✓ PASS: Comment in middle
+✓ PASS: Multiple consecutive
+
+Results: 10/10 passed
 
 Running: Command Extraction
 ------------------------------------------------------------
@@ -646,10 +611,13 @@ Command Extraction Tests
 ✓ PASS: Multiline proc
 ✗ FAIL: Commands with comments - Expected 2 commands, got 4
 ✓ PASS: Empty lines
-can't read "x": no such variable
-    while executing
-"test "Command with nested braces" "if \{$x\} \{\n    puts yes\n\}" 1"
-    (file "/Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/tcl/core/ast/test_commands.tcl" line 36)
+✓ PASS: Command with nested braces
+✓ PASS: For loop
+✓ PASS: Multiple procs
+✓ PASS: Empty code
+
+Results: 9/10 passed
+child process exited abnormally
 
 
 PARSER TESTS
@@ -777,16 +745,21 @@ Running: Full AST Integration
 Full AST Integration Tests
 =========================================
 
-✓ PASS: Empty code produces empty AST
-✓ PASS: Single set command
-✓ PASS: Simple procedure
-✓ PASS: Multiple commands
-can't read "x": no such variable
-    while executing
-"test "If statement" "if \{$x\} \{ puts yes \}" {
-    "has root type" {dict get $ast type} "root"
-    "has 1 child" {llength [dict get $ast children]} ..."
-    (file "/Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/tcl/core/ast/integration/test_full_ast.tcl" line 85)
+✗ FAIL: Empty code produces empty AST - has root type (Error: can't read "ast": no such variable)
+✗ FAIL: Single set command - has root type (Error: can't read "ast": no such variable)
+✗ FAIL: Simple procedure - has root type (Error: can't read "ast": no such variable)
+✗ FAIL: Multiple commands - has root type (Error: can't read "ast": no such variable)
+✗ FAIL: If statement - has root type (Error: can't read "ast": no such variable)
+✗ FAIL: Namespace eval - has root type (Error: can't read "ast": no such variable)
+
+=========================================
+Test Results
+=========================================
+Total:  6
+Passed: 0
+
+✗ SOME TESTS FAILED
+child process exited abnormally
 
 
 =========================================
@@ -797,7 +770,7 @@ Test Suite                               Status
 ============================================================
 JSON Serialization                       ✗ FAIL
 Utilities                                ✗ FAIL
-Comment Extraction                       ✗ FAIL
+Comment Extraction                       ✓ PASS
 Command Extraction                       ✗ FAIL
 Procedure Parser                         ✗ FAIL
 Variable Parser                          ✗ FAIL
@@ -810,8 +783,8 @@ Full AST Integration                     ✗ FAIL
 ============================================================
 
 Total Suites:  12
-Passed:        0
-Failed:        12
+Passed:        1
+Failed:        11
 
 ✗ SOME TEST SUITES FAILED
 

@@ -31,11 +31,15 @@ Scheduling: tests/lua/analyzer/references_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/diagnostics_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/codelens_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/hover_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/signature_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/folding_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -47,15 +51,15 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/init_spec.lua
-Real Neovim test environment initialized
-
-========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/formatting_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/highlights_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/diagnostics_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/helpers_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -63,15 +67,7 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/workspace_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/symbols_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/init_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/scope_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -79,11 +75,11 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/folding_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/workspace_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/init_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/highlights_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -126,7 +122,7 @@ Errors :        0
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/cache_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/hover_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -134,23 +130,7 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/c
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/signature_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/codelens_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/logger_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/scope_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/refactor_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/symbols_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -158,7 +138,27 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/sy
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/helpers_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/logger_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/refactor_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/cache_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/init_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -313,45 +313,20 @@ Fail    ||      TCL AST Parser Control Flow Structures should parse if-elseif-el
             stack traceback:
                 ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:271: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:257>
 
-Fail    ||      TCL AST Parser Control Flow Structures should parse while loop
-            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:285: Expected objects to be equal.
-            Passed in:
-            (nil)
-            Expected:
-            (string) 'while'
-
-            stack traceback:
-                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:285: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:275>
-
-Fail    ||      TCL AST Parser Control Flow Structures should parse for loop
-            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:300: Expected objects to be equal.
-            Passed in:
-            (nil)
-            Expected:
-            (string) 'for'
-
-            stack traceback:
-                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:300: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:290>
-
-Fail    ||      TCL AST Parser Control Flow Structures should parse foreach loop
-            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:317: Expected objects to be equal.
-            Passed in:
-            (nil)
-            Expected:
-            (string) 'foreach'
-
-            stack traceback:
-                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:317: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:307>
-
+Success ||      TCL AST Parser Control Flow Structures should parse while loop
+Success ||      TCL AST Parser Control Flow Structures should parse for loop
+Success ||      TCL AST Parser Control Flow Structures should parse foreach loop
 Fail    ||      TCL AST Parser Control Flow Structures should parse switch statement
-            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:335: Expected objects to be equal.
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:333: Should parse switch
+            Expected objects to be the same.
             Passed in:
-            (nil)
+            (string) 'Parser error: Parser error: invalid command name "::tokenizer::tokenize"
+            '
             Expected:
-            (string) 'switch'
+            type nil
 
             stack traceback:
-                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:335: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:323>
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:333: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:323>
 
 Fail    ||      TCL AST Parser Namespace Handling should parse namespace declaration
             ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:353: Expected objects to be equal.
@@ -419,8 +394,8 @@ Fail    ||      TCL AST Parser Complex Real-World Code should parse complex proc
 
 Success ||      TCL AST Parser Complex Real-World Code should parse multiple procedures and variables
 
-Success:        20
-Failed :        19
+Success:        23
+Failed :        16
 Errors :        0
 ========================================
 Tests Failed. Exit: 1
@@ -736,21 +711,22 @@ Running: Control Flow Parser
 Control Flow Parser Tests
 =========================
 
-✓ PASS: Simple if
-✓ PASS: If-else
-✓ PASS: If-elseif-else
-✓ PASS: Simple while
-✓ PASS: While with complex condition
-✓ PASS: Simple for
-✓ PASS: For with step
-✓ PASS: Simple foreach
-✓ PASS: Foreach with multiple vars
-✓ PASS: Foreach multiple lists
-✓ PASS: Simple switch
-✓ PASS: Switch with default
-✓ PASS: Switch with -exact
+✗ FAIL: Simple if - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: If-else - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: If-elseif-else - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: Simple while - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: While with complex condition - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: Simple for - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: For with step - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: Simple foreach - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: Foreach with multiple vars - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: Foreach multiple lists - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: Simple switch - Error: invalid command name "::tokenizer::tokenize"
+✗ FAIL: Switch with default - Error: invalid command name "::tokenizer::tokenize"
+✗ FAIL: Switch with -exact - Error: invalid command name "::tokenizer::tokenize"
 
-Results: 13/13 passed
+Results: 0/13 passed
+child process exited abnormally
 
 Running: Namespace Parser
 ------------------------------------------------------------
@@ -850,7 +826,7 @@ Comment Extraction                       ✓ PASS
 Command Extraction                       ✓ PASS
 Procedure Parser                         ✓ PASS
 Variable Parser                          ✓ PASS
-Control Flow Parser                      ✓ PASS
+Control Flow Parser                      ✗ FAIL
 Namespace Parser                         ✓ PASS
 Package Parser                           ✓ PASS
 Expression Parser                        ✓ PASS
@@ -859,9 +835,9 @@ Full AST Integration                     ✓ PASS
 ============================================================
 
 Total Suites:  12
-Passed:        12
-Failed:        0
+Passed:        11
+Failed:        1
 
-✓ ALL TEST SUITES PASSED
+✗ SOME TEST SUITES FAILED
 
-Ready for deployment!
+Please review failures above.

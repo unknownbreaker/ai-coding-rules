@@ -35,19 +35,23 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/folding_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/hover_spec.lua
-Real Neovim test environment initialized
-
-========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/formatting_spec.lua
 Real Neovim test environment initialized
 
 ========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/symbols_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/highlights_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/codelens_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/folding_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -90,19 +94,11 @@ Errors :        0
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/signature_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/refactor_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/workspace_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/codelens_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/init_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/hover_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -110,47 +106,15 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/
 Real Neovim test environment initialized
 
 ========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/signature_spec.lua
+Real Neovim test environment initialized
+
+========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/helpers_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/init_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/cache_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/symbols_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/logger_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/init_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/rename_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/cleanup_spec.lua
-Real Neovim test environment initialized
-
-========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/references_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/refactor_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/highlights_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -162,11 +126,74 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/
 Real Neovim test environment initialized
 
 ========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/rename_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/cache_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/workspace_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/logger_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/symbols_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/cleanup_spec.lua
+Real Neovim test environment initialized
+
+========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/command_substitution_spec.lua
-Success ||      Command Substitution - Granular Tests Level 1: Simple Commands (No Substitution) should parse simple set with string value
-Success ||      Command Substitution - Granular Tests Level 1: Simple Commands (No Substitution) should parse simple set with numeric value
+Fail    ||      Command Substitution - Granular Tests Level 1: Simple Commands (No Substitution) should parse simple set with string value
+            ...-lsp.nvim/tests/lua/parser/command_substitution_spec.lua:17: Expected objects to be equal.
+            Passed in:
+            (nil)
+            Expected:
+            (string) 'set'
+
+            stack traceback:
+                ...-lsp.nvim/tests/lua/parser/command_substitution_spec.lua:17: in function <...-lsp.nvim/tests/lua/parser/command_substitution_spec.lua:8>
+
+Fail    ||      Command Substitution - Granular Tests Level 1: Simple Commands (No Substitution) should parse simple set with numeric value
+            ...-lsp.nvim/tests/lua/parser/command_substitution_spec.lua:29: Expected objects to be equal.
+            Passed in:
+            (number) 42
+            Expected:
+            (string) '42'
+
+            stack traceback:
+                ...-lsp.nvim/tests/lua/parser/command_substitution_spec.lua:29: in function <...-lsp.nvim/tests/lua/parser/command_substitution_spec.lua:22>
+
 Success ||      Command Substitution - Granular Tests Level 1: Simple Commands (No Substitution) should parse set with variable reference
-Success ||      Command Substitution - Granular Tests Level 2: Commands with Square Brackets (As Strings) should handle brackets in quoted strings
+Fail    ||      Command Substitution - Granular Tests Level 2: Commands with Square Brackets (As Strings) should handle brackets in quoted strings
+            ...-lsp.nvim/tests/lua/parser/command_substitution_spec.lua:51: Expected objects to be equal.
+            Passed in:
+            (nil)
+            Expected:
+            (string) 'x'
+
+            stack traceback:
+                ...-lsp.nvim/tests/lua/parser/command_substitution_spec.lua:51: in function <...-lsp.nvim/tests/lua/parser/command_substitution_spec.lua:44>
+
 Success ||      Command Substitution - Granular Tests Level 2: Commands with Square Brackets (As Strings) should handle escaped brackets
 Success ||      Command Substitution - Granular Tests Level 3: Actual Command Substitution should parse set with command substitution - simple
 Success ||      Command Substitution - Granular Tests Level 3: Actual Command Substitution should parse set with expr command substitution
@@ -174,10 +201,11 @@ Success ||      Command Substitution - Granular Tests Level 3: Actual Command Su
 Success ||      Command Substitution - Granular Tests Level 4: Multiple Substitutions should parse command with multiple substitutions
 Success ||      Command Substitution - Granular Tests Level 5: Command Extraction with Brackets should not split commands on brackets
 
-Success:        10
-Failed :        0
+Success:        7
+Failed :        3
 Errors :        0
 ========================================
+Tests Failed. Exit: 1
 Real Neovim test environment initialized
 
 ========================================
@@ -185,28 +213,96 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/as
 Success ||      TCL AST Parser Basic AST Construction should parse empty TCL code
 Success ||      TCL AST Parser Basic AST Construction should parse whitespace-only code
 Success ||      TCL AST Parser Basic AST Construction should parse single comment
-Success ||      TCL AST Parser Procedure (proc) Parsing should parse simple procedure with no arguments
-Success ||      TCL AST Parser Procedure (proc) Parsing should parse procedure with arguments
-Success ||      TCL AST Parser Procedure (proc) Parsing should parse procedure with default argument values
-Fail    ||      TCL AST Parser Procedure (proc) Parsing should parse procedure with args (variable arguments)
-            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:142: Expected objects to be the same.
+Fail    ||      TCL AST Parser Procedure (proc) Parsing should parse simple procedure with no arguments
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:78: Node should be proc type
+            Expected objects to be equal.
             Passed in:
-            (table: 0x0104ab5510) {
-              [1] = 1 }
+            (nil)
             Expected:
-            (boolean) true
+            (string) 'proc'
 
             stack traceback:
-                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:142: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:129>
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:78: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:65>
 
-Success ||      TCL AST Parser Procedure (proc) Parsing should parse nested procedures
-Success ||      TCL AST Parser Variable Declarations should parse simple variable set
+Fail    ||      TCL AST Parser Procedure (proc) Parsing should parse procedure with arguments
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:98: Expected objects to be equal.
+            Passed in:
+            (nil)
+            Expected:
+            (string) 'greet'
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:98: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:86>
+
+Fail    ||      TCL AST Parser Procedure (proc) Parsing should parse procedure with default argument values
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:122: Expected objects to be equal.
+            Passed in:
+            (number) 10
+            Expected:
+            (string) '10'
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:122: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:104>
+
+Fail    ||      TCL AST Parser Procedure (proc) Parsing should parse procedure with args (variable arguments)
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:139: attempt to get length of field 'params' (a nil value)
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:139: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:129>
+
+Fail    ||      TCL AST Parser Procedure (proc) Parsing should parse nested procedures
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:160: Expected objects to be equal.
+            Passed in:
+            (nil)
+            Expected:
+            (string) 'outer'
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:160: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:145>
+
+Fail    ||      TCL AST Parser Variable Declarations should parse simple variable set
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:177: Expected objects to be equal.
+            Passed in:
+            (nil)
+            Expected:
+            (string) 'set'
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:177: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:169>
+
 Success ||      TCL AST Parser Variable Declarations should parse variable set with expression
 Success ||      TCL AST Parser Variable Declarations should parse global variable declaration
-Success ||      TCL AST Parser Variable Declarations should parse upvar declaration
+Fail    ||      TCL AST Parser Variable Declarations should parse upvar declaration
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:210: Expected objects to be equal.
+            Passed in:
+            (number) 1
+            Expected:
+            (string) '1'
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:210: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:203>
+
 Success ||      TCL AST Parser Variable Declarations should parse array set
-Success ||      TCL AST Parser Control Flow Structures should parse if statement
-Success ||      TCL AST Parser Control Flow Structures should parse if-else statement
+Fail    ||      TCL AST Parser Control Flow Structures should parse if statement
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:237: Expected objects to be equal.
+            Passed in:
+            (nil)
+            Expected:
+            (string) 'if'
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:237: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:227>
+
+Fail    ||      TCL AST Parser Control Flow Structures should parse if-else statement
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:254: Expected objects to not be the same.
+            Passed in:
+            (nil)
+            Did not expect:
+            type nil
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:254: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:242>
+
 Fail    ||      TCL AST Parser Control Flow Structures should parse if-elseif-else chain
             ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:271: Expected objects to be the same.
             Passed in:
@@ -217,35 +313,69 @@ Fail    ||      TCL AST Parser Control Flow Structures should parse if-elseif-el
             stack traceback:
                 ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:271: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:257>
 
-Success ||      TCL AST Parser Control Flow Structures should parse while loop
-Success ||      TCL AST Parser Control Flow Structures should parse for loop
-Success ||      TCL AST Parser Control Flow Structures should parse foreach loop
-Fail    ||      TCL AST Parser Control Flow Structures should parse switch statement
-            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:336: Expected objects to be the same.
+Fail    ||      TCL AST Parser Control Flow Structures should parse while loop
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:285: Expected objects to be equal.
             Passed in:
             (nil)
             Expected:
-            type table
+            (string) 'while'
 
             stack traceback:
-                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:336: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:323>
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:285: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:275>
+
+Fail    ||      TCL AST Parser Control Flow Structures should parse for loop
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:300: Expected objects to be equal.
+            Passed in:
+            (nil)
+            Expected:
+            (string) 'for'
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:300: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:290>
+
+Fail    ||      TCL AST Parser Control Flow Structures should parse foreach loop
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:317: Expected objects to be equal.
+            Passed in:
+            (nil)
+            Expected:
+            (string) 'foreach'
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:317: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:307>
+
+Fail    ||      TCL AST Parser Control Flow Structures should parse switch statement
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:335: Expected objects to be equal.
+            Passed in:
+            (nil)
+            Expected:
+            (string) 'switch'
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:335: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:323>
 
 Fail    ||      TCL AST Parser Namespace Handling should parse namespace declaration
-            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:355: Expected objects to be the same.
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:353: Expected objects to be equal.
             Passed in:
-            (string) '{
-                variable x 10
-                proc myproc {} {}
-            }'
+            (nil)
             Expected:
-            type table
+            (string) 'namespace'
 
             stack traceback:
-                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:355: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:342>
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:353: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:342>
 
 Success ||      TCL AST Parser Namespace Handling should parse namespace import
 Success ||      TCL AST Parser Namespace Handling should parse namespace qualified names
-Success ||      TCL AST Parser Position Tracking should track line and column numbers
+Fail    ||      TCL AST Parser Position Tracking should track line and column numbers
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:390: Should have range
+            Expected objects to not be the same.
+            Passed in:
+            (nil)
+            Did not expect:
+            type nil
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:390: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:379>
+
 Success ||      TCL AST Parser Position Tracking should track positions for all nodes
 Success ||      TCL AST Parser Error Handling should detect syntax errors
 Success ||      TCL AST Parser Error Handling should handle incomplete code
@@ -264,27 +394,33 @@ Fail    ||      TCL AST Parser Expression Parsing should parse variable substitu
 Success ||      TCL AST Parser Expression Parsing should parse command substitution
 Success ||      TCL AST Parser List Operations should parse list creation
 Success ||      TCL AST Parser List Operations should parse lappend
-Success ||      TCL AST Parser Package Handling should parse package require
+Fail    ||      TCL AST Parser Package Handling should parse package require
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:507: Expected objects to be equal.
+            Passed in:
+            (number) 8.5999999999999996447
+            Expected:
+            (string) '8.6'
+
+            stack traceback:
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:507: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:499>
+
 Success ||      TCL AST Parser Package Handling should parse package provide
 Success ||      TCL AST Parser File Path Handling should parse from file
 Success ||      TCL AST Parser File Path Handling should handle file read errors
 Fail    ||      TCL AST Parser Complex Real-World Code should parse complex procedure with multiple constructs
-            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:575: Should parse complex procedure: Parser error: Parser error: list element in quotes followed by "]" instead of space
-
-            Expected objects to be the same.
+            ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:580: Expected objects to be equal.
             Passed in:
-            (string) 'Parser error: Parser error: list element in quotes followed by "]" instead of space
-            '
+            (nil)
             Expected:
-            type nil
+            (string) 'proc'
 
             stack traceback:
-                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:575: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:550>
+                ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:580: in function <...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:550>
 
 Success ||      TCL AST Parser Complex Real-World Code should parse multiple procedures and variables
 
-Success:        33
-Failed :        6
+Success:        20
+Failed :        19
 Errors :        0
 ========================================
 Tests Failed. Exit: 1
@@ -404,67 +540,19 @@ JSON Module Test Suite
 
 Group 1: Basic Type Serialization
 -----------------------------------------
-✗ FAIL: Empty dict
-  Expected: {}
-  Got: {
-
-}
+✓ PASS: Empty dict
 ✓ PASS: Simple string value
 ✓ PASS: Integer value
-✗ FAIL: Float value
-  Expected: {
-  "pi": 3.14
-}
-  Got: {
-  "pi": "3.14"
-}
-✗ FAIL: Boolean-like values
-  Expected: {
-  "flag": 1
-}
-  Got: {
-  "flag": "1"
-}
+✓ PASS: Float value
+✓ PASS: Boolean-like values
 
 Group 2: Special Character Escaping
 -----------------------------------------
-✗ FAIL: Newline escape
-  Expected: {
-  "text": "line1\nline2"
-}
-  Got: {
-  "text": {
-    "line1": "line2"
-  }
-}
-✗ FAIL: Quote escape
-  Expected: {
-  "text": "say \"hello\""
-}
-  Got: {
-  "text": {
-    "say": "hello"
-  }
-}
+✓ PASS: Newline escape
+✓ PASS: Quote escape
 ✓ PASS: Backslash escape
-✗ FAIL: Tab escape
-  Expected: {
-  "text": "col1\tcol2"
-}
-  Got: {
-  "text": {
-    "col1": "col2"
-  }
-}
-✗ FAIL: Carriage return escape
-  Expected: {
-  "text": "line1\rline2"
-}
-  Got: {
-  "text": {
-    "line1": "line2"
-  }
-}
+✓ PASS: Tab escape
+✓ PASS: Carriage return escape
 
 Group 3: List Serialization
 -----------------------------------------
@@ -472,13 +560,7 @@ Group 3: List Serialization
 ✓ PASS: Simple list
 ✓ PASS: Numeric list
 ✓ PASS: Mixed list
-✗ FAIL: Single element list
-  Expected: {
-  "single": ["alone"]
-}
-  Got: {
-  "single": "alone"
-}
+✓ PASS: Single element list
 
 Group 4: Nested Structures (BUG FIX VALIDATION)
 -----------------------------------------
@@ -511,8 +593,8 @@ Group 7: Edge Cases
 Test Results
 =========================================
 Total:  28
-Passed: 19
-Failed: 9
+Passed: 27
+Failed: 1
 
 ✗ SOME TESTS FAILED
 child process exited abnormally

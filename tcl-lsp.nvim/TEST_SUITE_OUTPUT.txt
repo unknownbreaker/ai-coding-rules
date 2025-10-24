@@ -31,6 +31,10 @@ Scheduling: tests/lua/analyzer/references_spec.lua
 Real Neovim test environment initialized
 
 ========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/completion_spec.lua
+Real Neovim test environment initialized
+
+========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/formatting_spec.lua
 Real Neovim test environment initialized
 
@@ -43,27 +47,19 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/codelens_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/helpers_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/completion_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/diagnostics_spec.lua
-Real Neovim test environment initialized
-
-========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/signature_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/cleanup_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/logger_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/symbols_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/highlights_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -106,7 +102,55 @@ Errors :        0
 Real Neovim test environment initialized
 
 ========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/definitions_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/helpers_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/cache_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/diagnostics_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/codelens_spec.lua
+Real Neovim test environment initialized
+
+========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/scope_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/symbols_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/workspace_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/references_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/cleanup_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/refactor_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -115,50 +159,6 @@ Real Neovim test environment initialized
 
 ========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/rename_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/definitions_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/references_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/init_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/cache_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/workspace_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/init_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/symbols_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/refactor_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/logger_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/symbols_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/highlights_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -191,7 +191,7 @@ Success ||      TCL AST Parser Procedure (proc) Parsing should parse procedure w
 Fail    ||      TCL AST Parser Procedure (proc) Parsing should parse procedure with args (variable arguments)
             ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:142: Expected objects to be the same.
             Passed in:
-            (table: 0x010367a020) {
+            (table: 0x0105220e40) {
               [1] = 1 }
             Expected:
             (boolean) true
@@ -624,11 +624,11 @@ Running: Procedure Parser
 Procedure Parser Tests
 ======================
 
-✗ FAIL: Simple proc no args - Error: invalid command name "::ast::delimiters::strip_outer"
-✗ FAIL: Proc with args - Error: invalid command name "::ast::delimiters::strip_outer"
-✗ FAIL: Proc with defaults - Error: invalid command name "::ast::delimiters::strip_outer"
-✗ FAIL: Proc with varargs - Error: invalid command name "::ast::delimiters::strip_outer"
-✗ FAIL: Complex proc - Error: invalid command name "::ast::delimiters::strip_outer"
+✗ FAIL: Simple proc no args - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: Proc with args - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: Proc with defaults - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: Proc with varargs - Error: invalid command name "::ast::find_all_nodes"
+✗ FAIL: Complex proc - Error: invalid command name "::ast::find_all_nodes"
 
 Results: 0/5 passed
 child process exited abnormally
@@ -638,43 +638,41 @@ Running: Variable Parser
 Variable Parser Tests
 =====================
 
-✗ FAIL: Simple set - Error: invalid command name "::ast::parsers::parse_variable"
-✗ FAIL: Set with string - Error: invalid command name "::ast::parsers::parse_variable"
-✗ FAIL: Set with variable reference - Error: invalid command name "::ast::parsers::parse_variable"
-✗ FAIL: Variable declaration - Error: invalid command name "::ast::parsers::parse_variable"
-✗ FAIL: Variable without default - Error: invalid command name "::ast::parsers::parse_variable"
-✗ FAIL: Global variable - Error: invalid command name "::ast::parsers::parse_variable"
-✗ FAIL: Multiple globals - Error: invalid command name "::ast::parsers::parse_variable"
-✗ FAIL: Simple upvar - Error: invalid command name "::ast::parsers::parse_variable"
-✗ FAIL: Upvar with level - Error: invalid command name "::ast::parsers::parse_variable"
-✗ FAIL: Array set - Error: invalid command name "::ast::parsers::parse_variable"
-✗ FAIL: Array get - Error: invalid command name "::ast::parsers::parse_variable"
-✗ FAIL: Array exists - Error: invalid command name "::ast::parsers::parse_variable"
+✓ PASS: Simple set
+✓ PASS: Set with string
+✓ PASS: Set with variable reference
+✓ PASS: Variable declaration
+✓ PASS: Variable without default
+✓ PASS: Global variable
+✓ PASS: Multiple globals
+✓ PASS: Simple upvar
+✓ PASS: Upvar with level
+✓ PASS: Array set
+✓ PASS: Array get
+✓ PASS: Array exists
 
-Results: 0/12 passed
-child process exited abnormally
+Results: 12/12 passed
 
 Running: Control Flow Parser
 ------------------------------------------------------------
 Control Flow Parser Tests
 =========================
 
-✗ FAIL: Simple if - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: If-else - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: If-elseif-else - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: Simple while - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: While with complex condition - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: Simple for - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: For with step - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: Simple foreach - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: Foreach with multiple vars - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: Foreach multiple lists - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: Simple switch - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: Switch with default - Error: invalid command name "::ast::parsers::parse_control_flow"
-✗ FAIL: Switch with -exact - Error: invalid command name "::ast::parsers::parse_control_flow"
+✓ PASS: Simple if
+✓ PASS: If-else
+✓ PASS: If-elseif-else
+✓ PASS: Simple while
+✓ PASS: While with complex condition
+✓ PASS: Simple for
+✓ PASS: For with step
+✓ PASS: Simple foreach
+✓ PASS: Foreach with multiple vars
+✓ PASS: Foreach multiple lists
+✓ PASS: Simple switch
+✓ PASS: Switch with default
+✓ PASS: Switch with -exact
 
-Results: 0/13 passed
-child process exited abnormally
+Results: 13/13 passed
 
 Running: Namespace Parser
 ------------------------------------------------------------
@@ -725,17 +723,16 @@ Running: List Parser
 List Parser Tests
 =================
 
-✗ FAIL: Simple list - Error: invalid command name "::ast::parsers::parse_list"
-✗ FAIL: Empty list - Error: invalid command name "::ast::parsers::parse_list"
-✗ FAIL: List with spaces - Error: invalid command name "::ast::parsers::parse_list"
-✗ FAIL: Simple lappend - Error: invalid command name "::ast::parsers::parse_list"
-✗ FAIL: Lappend multiple - Error: invalid command name "::ast::parsers::parse_list"
-✗ FAIL: Simple puts - Error: invalid command name "::ast::parsers::parse_list"
-✗ FAIL: Puts to channel - Error: invalid command name "::ast::parsers::parse_list"
-✗ FAIL: Puts with -nonewline - Error: invalid command name "::ast::parsers::parse_list"
+✓ PASS: Simple list
+✓ PASS: Empty list
+✓ PASS: List with spaces
+✓ PASS: Simple lappend
+✓ PASS: Lappend multiple
+✓ PASS: Simple puts
+✓ PASS: Puts to channel
+✓ PASS: Puts with -nonewline
 
-Results: 0/8 passed
-child process exited abnormally
+Results: 8/8 passed
 
 
 INTEGRATION TESTS
@@ -774,18 +771,18 @@ Utilities                                ✓ PASS
 Comment Extraction                       ✓ PASS
 Command Extraction                       ✓ PASS
 Procedure Parser                         ✗ FAIL
-Variable Parser                          ✗ FAIL
-Control Flow Parser                      ✗ FAIL
+Variable Parser                          ✓ PASS
+Control Flow Parser                      ✓ PASS
 Namespace Parser                         ✓ PASS
 Package Parser                           ✓ PASS
 Expression Parser                        ✓ PASS
-List Parser                              ✗ FAIL
+List Parser                              ✓ PASS
 Full AST Integration                     ✓ PASS
 ============================================================
 
 Total Suites:  12
-Passed:        7
-Failed:        5
+Passed:        10
+Failed:        2
 
 ✗ SOME TEST SUITES FAILED
 

@@ -31,23 +31,11 @@ Scheduling: tests/lua/analyzer/references_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/folding_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/completion_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/formatting_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/logger_spec.lua
 Real Neovim test environment initialized
 
 ========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/symbols_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/highlights_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -90,43 +78,15 @@ Errors :        0
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/codelens_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/highlights_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/hover_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/folding_spec.lua
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/scope_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/diagnostics_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/symbols_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/init_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/logger_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/references_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/init_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/definitions_spec.lua
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/formatting_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -134,15 +94,7 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/r
 Real Neovim test environment initialized
 
 ========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/helpers_spec.lua
-Real Neovim test environment initialized
-
-========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/refactor_spec.lua
-Real Neovim test environment initialized
-
-========================================
-Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/cleanup_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -150,7 +102,27 @@ Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/
 Real Neovim test environment initialized
 
 ========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/codelens_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/completion_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/hover_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/utils/helpers_spec.lua
+Real Neovim test environment initialized
+
+========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/scope_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -159,6 +131,34 @@ Real Neovim test environment initialized
 
 ========================================
 Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/workspace_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/cleanup_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/definitions_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/features/diagnostics_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/actions/init_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/parser/symbols_spec.lua
+Real Neovim test environment initialized
+
+========================================
+Testing:        /Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/lua/analyzer/references_spec.lua
 Real Neovim test environment initialized
 
 ========================================
@@ -191,7 +191,7 @@ Success ||      TCL AST Parser Procedure (proc) Parsing should parse procedure w
 Fail    ||      TCL AST Parser Procedure (proc) Parsing should parse procedure with args (variable arguments)
             ...cuments/Repos/tcl-lsp.nvim/tests/lua/parser/ast_spec.lua:142: Expected objects to be the same.
             Passed in:
-            (table: 0x010280b818) {
+            (table: 0x010152d968) {
               [1] = 1 }
             Expected:
             (boolean) true
@@ -643,10 +643,19 @@ Variable Parser Tests
 
 ✗ FAIL: Simple set - Error: invalid command name "::ast::parsers::parse_variable"
 ✗ FAIL: Set with string - Error: invalid command name "::ast::parsers::parse_variable"
-can't read "x": no such variable
-    while executing
-"test "Set with variable reference" "set y $x" "set""
-    (file "/Users/rob.yang/Documents/Repos/tcl-lsp.nvim/tests/tcl/core/ast/parsers/test_variables.tcl" line 40)
+✗ FAIL: Set with variable reference - Error: invalid command name "::ast::parsers::parse_variable"
+✗ FAIL: Variable declaration - Error: invalid command name "::ast::parsers::parse_variable"
+✗ FAIL: Variable without default - Error: invalid command name "::ast::parsers::parse_variable"
+✗ FAIL: Global variable - Error: invalid command name "::ast::parsers::parse_variable"
+✗ FAIL: Multiple globals - Error: invalid command name "::ast::parsers::parse_variable"
+✗ FAIL: Simple upvar - Error: invalid command name "::ast::parsers::parse_variable"
+✗ FAIL: Upvar with level - Error: invalid command name "::ast::parsers::parse_variable"
+✗ FAIL: Array set - Error: invalid command name "::ast::parsers::parse_variable"
+✗ FAIL: Array get - Error: invalid command name "::ast::parsers::parse_variable"
+✗ FAIL: Array exists - Error: invalid command name "::ast::parsers::parse_variable"
+
+Results: 0/12 passed
+child process exited abnormally
 
 Running: Control Flow Parser
 ------------------------------------------------------------
@@ -744,21 +753,20 @@ Running: Full AST Integration
 Full AST Integration Tests
 =========================================
 
-✗ FAIL: Empty code produces empty AST - has root type (Error: missing value to go with key)
-✗ FAIL: Single set command - has root type (Error: missing value to go with key)
-✗ FAIL: Simple procedure - has root type (Error: missing value to go with key)
-✗ FAIL: Multiple commands - has root type (Error: missing value to go with key)
-✗ FAIL: If statement - has root type (Error: missing value to go with key)
-✗ FAIL: Namespace eval - has root type (Error: missing value to go with key)
+✓ PASS: Empty code produces empty AST
+✓ PASS: Single set command
+✓ PASS: Simple procedure
+✓ PASS: Multiple commands
+✓ PASS: If statement
+✓ PASS: Namespace eval
 
 =========================================
 Test Results
 =========================================
 Total:  6
-Passed: 0
+Passed: 6
 
-✗ SOME TESTS FAILED
-child process exited abnormally
+✓ ALL TESTS PASSED
 
 
 =========================================
@@ -778,12 +786,12 @@ Namespace Parser                         ✗ FAIL
 Package Parser                           ✗ FAIL
 Expression Parser                        ✗ FAIL
 List Parser                              ✗ FAIL
-Full AST Integration                     ✗ FAIL
+Full AST Integration                     ✓ PASS
 ============================================================
 
 Total Suites:  12
-Passed:        2
-Failed:        10
+Passed:        3
+Failed:        9
 
 ✗ SOME TEST SUITES FAILED
 
